@@ -1,0 +1,37 @@
+main,
+section,
+header,
+footer,
+div {
+	border: 2px solid black;
+}
+
+div {
+	display: grid;
+	grid-template-areas:
+		'header'
+		'main'
+		'section'
+		'footer';
+	grid-template-rows: 1fr 5fr 0.6fr 0.5fr;
+	gap: 10px;
+	max-width: 1200px;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 80px 8fr 80px;
+	gap: 10px;
+}
+
+.dogInfo {
+	display: flex;
+}
+
+.dogPic {
+	width: 60%;
+}
+
+.dogDesc {
+	width: 40%;
+}
