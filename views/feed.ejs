@@ -1,18 +1,53 @@
 <%- include('partials/header') -%>
+
   <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+    <div class="row justify-content-center mt-5 col-auto">
+      <ul class="row-cols-1 list-unstyled ">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
+          <li class="row-cols-1 justify-content-between mt-5"  >
+            
+            
+				<section class="prevDogContainer navButtons">
+					<button class="prevDog">Previous</button>
+				</section>
+        
+				<section class="dogInfo">
+          <div class=" row-cols-2">
+            	<section class="dogPic">
+						<a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid" src="<%= posts[i].image%>">
             </a>
+					</section>
+          </div>
+
+          <div class="row-cols-2 mt-5">
+            <section class="dogDesc">
+						<h3><%= posts[i].title%></h3>
+						<h6>Breed: <%= posts[i].title%></h6>
+						<h6>Age: <%= posts[i].age%></h6>
+						<h6>Good with Children? <%= posts[i].kids%></h6>
+						<h6>Good with other Dogs? <%= posts[i].dogs%></h6>
+            <h6>Good with other Cats? <%= posts[i].cats%></h6>
+            <h6>Background:</h6>
+						<p><%= posts[i].caption%></p>
             
+					</section>
+          </div>
+					
+				</section>
+				<section class="nextDogContainer navButtons">
+					<button class="nextDog">Next</button>
+				</section>
+			
+		
 
           </li>
         <% } %>
         </ul>
-
+	<section class="actionButtons">
+				<button class="saveDog">Save</button>
+				<button class="likeDog">Like</button>
+			</section>
        
     </div>
     

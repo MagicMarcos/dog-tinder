@@ -17,7 +17,23 @@ const PostSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	likes: {
+	breed: {
+		type: String,
+		required: true,
+	},
+	kids: {
+		type: String,
+		required: true,
+	},
+	dogs: {
+		type: String,
+		required: true,
+	},
+	cats: {
+		type: String,
+		required: true,
+	},
+	age: {
 		type: Number,
 		required: true,
 	},

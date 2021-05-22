@@ -8,22 +8,96 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Add a post</h2>
+            <h2>Post New Dog</h2>
+
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <!-- Pet Name -->
               <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
+                  <label for="title" class="form-label">Name</label>
                   <input type="text" class="form-control" id="title" name="title">
               </div>
+
+              <!-- Pet Breed -->
               <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
+                  <label for="title" class="form-label">Breed</label>
+                  <input type="text" class="form-control" id="breed" name="breed">
               </div>
+
+              <!-- Pet Age -->
+              <div class="mb-3">
+                  <label for="title" class="form-label">Age</label>
+                  <input type="number" class="form-control" id="age" name="age">
+              </div>
+
+              <!-- Good With Kids? -->
+               <div class="mb-3">
+                <span>Good With Kids?</span>
+                  <div> 
+                  <input type="radio"  id="yes" name="kids" value="Yes">
+                   <label for="kids" class="form-label">Yes</label>
+                </div>
+
+                <div>
+                  <input type="radio"  id="no" name="kids" value="No">
+                  
+                  <label for="kids" class="form-label">No</label>
+                
+                  
+                </div>
+                  
+              </div>
+
+
+              <!-- Good With Dogs? -->
+              <div class="mb-3">
+                <span>Good With Dogs?</span>
+                  <div> 
+                  <input type="radio"  id="yes" name="dogs" value="Yes">
+                   <label for="dogs" class="form-label">Yes</label>
+                </div>
+
+                <div>
+                  <input type="radio"  id="no" name="dogs" value="No">
+                  
+                  <label for="dogs" class="form-label">No</label>
+                
+                  
+                </div>
+                  
+              </div>
+
+              <!-- Good With Cats? -->
+               <div class="mb-3">
+                <span>Good With Cats?</span>
+                  <div> 
+                  <input type="radio"  id="yes" name="cats" value="Yes">
+                   <label for="cats" class="form-label">Yes</label>
+                </div>
+
+                <div>
+                  <input type="radio"  id="no" name="cats" value="No">
+                  
+                  <label for="cats" class="form-label">No</label>
+                
+                  
+                </div>
+                  
+              </div>
+
+              <!-- Pet Background -->
+              <div class="mb-3">
+                <label for="caption" class="form-label">Tell us about this pup: </label>
+                <textarea placeholder="Enter Pooch Description" class="form-control"  id="caption" name="caption"></textarea>
+              </div>
+              <!-- Pet Picture -->
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
+              <!-- Submit Button -->
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
+              
           </div>
       </div>
       <div class="col-6">
