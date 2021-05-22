@@ -30,8 +30,10 @@ main {
 
 .dogPic {
 	width: 60%;
+	padding: 1%;
 }
 
 .dogDesc {
 	width: 40%;
+	padding: 1%;
 }
