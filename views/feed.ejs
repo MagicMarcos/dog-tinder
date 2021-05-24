@@ -1,22 +1,4 @@
 <%- include('partials/header') -%>
-<!-- <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-            
-
-          </li>
-        <% } %>
-        </ul>
-
-       
-    </div>
-    
-  </div>   -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +6,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -34,50 +15,18 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<!-- <p>
-			Demo from this article:
-			<a
-				href="https://gomakethings.com/how-to-make-multiple-fetch-calls-with-the-same-oauth-token-in-vanilla-js/"
-				>https://gomakethings.com/how-to-make-multiple-fetch-calls-with-the-same-oauth-token-in-vanilla-js/</a
-			>
-		</p>
-
-		<p>
-			Add your Petfinder API key and secret to the variables in the JS section,
-			then check the console.
-		</p>
-
-		<p></p>
-		<button id="getPet">get pet</button> -->
-
 		<div class="container">
-			<div id="results">
-				<div class="row">
-					<div class="col-sm-6">
-						<h2 id="name"></h2>
-						<h3>Breed:</h3>
-						<h3 id="breed"></h3>
-						<h3>Age:</h3>
-						<h3 id="age"></h3>
-						<h3>Gender</h3>
-						<h3 id="sex"></h3>
-					</div>
-				</div>
-				<section class="col-sm-6 text-center">
-					<img id="dogImg" class="img-fluid rounded-circle mt-2" src="" />
+			<div id="outcome"></div>
+
+			<div>
+				<section></section>
+				<section>
+					<button id="next">LIKE</button>
+					<button id="refresh">NEXT</button>
 				</section>
 			</div>
 		</div>
 
-		<div id="outcome"></div>
-
-		<div class="row">
-			<section class="col6"></section>
-			<section class="col6">
-				<button id="next">LIKE</button>
-				<button id="refresh">Make a Call</button>
-			</section>
-		</div>
 		<script src="js/main.js"></script>
 	</body>
 </html>

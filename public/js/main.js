@@ -27,18 +27,16 @@ var token, tokenType, expires;
  * @return {Promise} The fetch() Promise object
  */
 
+//TODO use likes from BUB to update this number in the user database -> then pull from it on button click?
 let num = 0;
 
-const next = document
-	.querySelector('#next')
-	.addEventListener('click', nextDog());
 function nextDog() {
-	num + 1;
 	getOAuth().then(function () {
 		getPets();
 	});
 }
 
+nextDog();
 function getPets() {
 	return fetch(
 		'https://api.petfinder.com/v2/animals?type=' +
@@ -62,18 +60,48 @@ function getPets() {
 			// Log the pet data
 
 			console.log('pets', data.animals);
-			document.querySelector('#name').innerText = data.animals[num].name;
-			document.querySelector('#age').innerText = data.animals[num].age;
-			document.querySelector('#breed').innerText =
-				data.animals[num].breeds.primary;
-			document.querySelector('#sex').innerText = data.animals[num].gender;
-			document.querySelector('#dogImg').src =
-				data.animals[num].photos[num].small;
+
+			var pets = data;
+			showPets(pets);
 		})
 		.catch(function (err) {
 			// Log any errors
 			console.log('something went wrong', err);
 		});
+}
+
+function showPets(data) {
+	const results = document.querySelector('#outcome');
+	results.innerHTML = '';
+
+	const div = document.createElement('div');
+	div.innerHTML = `<div class="row">
+						<div class="col-sm-6">
+						<h4>${data.animals[num].name}(${data.animals[num].age})</h4> 
+						
+						<h6>${data.animals[num].breeds.primary} </h6>
+						<h6>${data.animals[num].gender}</h6>
+
+						<ul class="list-group-item">
+							<li class="list-group-item">Phone: ${data.animals[num].contact.phone}</li>
+							<li class="list-group-item">Email: ${data.animals[num].contact.email} </li>
+						</ul>
+						
+						</div>
+						<div class="col-sm-6 text-center">
+						<img class="img-fluid rounded-circle mt-2" src= "${data.animals[num].photos[0].small}">
+						</div>
+						
+					</div>`;
+
+	results.appendChild(div);
+
+	// document.querySelector('#name').innerText = data.animals[num].name;
+	// document.querySelector('#age').innerText = data.animals[num].age;
+	// document.querySelector('#breed').innerText = data.animals[num].breeds.primary;
+	// document.querySelector('#sex').innerText = data.animals[num].gender;
+	// document.querySelector('#dogImg').src = data.animals[num].photos[0].medium;
+	num++;
 }
 
 /**
@@ -133,5 +161,5 @@ var makeCall = function () {
 // Inits & Event Listeners
 //
 
-makeCall();
+// makeCall();
 btn.addEventListener('click', makeCall, false);
