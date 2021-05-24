@@ -7,8 +7,6 @@ var btn = document.querySelector('#refresh');
 
 // Client credentials
 // Replace these with your key/secret
-var key = 'HZPA9QyM89D7qr9WkJyUZXQNmWsWcmd6bYK5PIFzFgcc6tT7dD';
-var secret = 'BUMy6DHlF00Racaqmog6qzGTDf69V9TEoMDqF5tT';
 
 // Call details
 var org = 'dog';
