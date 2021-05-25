@@ -2,8 +2,14 @@
 <div class="container">
 	<div class="row justify-content-center mt-5">
 		<div class="col-6">
-			<h2><%= post.title %></h2>
-			<img class="img-fluid" src="<%= post.image%>" />
+			<h2><%= post.name%></h2>
+			<h3 id="age"><%= post.age%></h3>
+
+			<h3 id="breed"><%= post.breed%></h3>
+			<h3 id="gender"><%= post.gender%></h3>
+
+			<h3 id="phone"><%= post.phone%></h3>
+			<h3 id="email"><%= post.email%></h3>
 			<div class="row justify-content-between">
 				<!-- delete button -->
 
@@ -20,14 +26,11 @@
 			</div>
 		</div>
 		<div class="col-3 mt-5">
-			<p><%= post.caption %></p>
-		</div>
-
-		<!-- return and profile bttns -->
-		<div class="col-6 mt-5">
 			<a class="btn btn-primary" href="/profile">Return to Profile</a>
-			<a class="btn btn-primary" href="/feed">Return to Feed</a>
+			<a class="btn btn-primary mt-5" href="/feed">Return to Feed</a>
 		</div>
+		<!-- return and profile bttns -->
+		<div class="col-6 mt-5"></div>
 	</div>
 </div>
 

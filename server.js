@@ -10,6 +10,7 @@ const logger = require('morgan');
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const postRoutes = require('./routes/posts');
+const petfinder = require('@petfinder/petfinder-js');
 
 //Use .env file in config folder
 require('dotenv').config({ path: './config/.env' });
@@ -61,3 +62,34 @@ app.use('/post', postRoutes);
 app.listen(process.env.PORT, () => {
 	console.log('Server is running, you better catch it!');
 });
+
+const petKeys = process.env.PET_KEY;
+const petSecret = process.env.PET_SECRET;
+
+//api sdk test
+let client = new petfinder.Client({
+	apiKey: petKeys,
+	secret: petSecret,
+});
+
+client.animal
+	.search({
+		type: 'Dog',
+		location: '01752',
+		page: 1,
+		limit: 5,
+	})
+
+	.then(function (res) {
+		const data = res.data.animals;
+		module.exports = function (req, res) {
+			res.writeHead(200, {
+				'Content-Type': 'text/json',
+			});
+			res.write(JSON.stringify(data));
+			res.end();
+		};
+	})
+	.catch(function (error) {
+		console.error(error);
+	});

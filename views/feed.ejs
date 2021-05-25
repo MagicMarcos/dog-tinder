@@ -15,18 +15,115 @@
 		<title>Document</title>
 	</head>
 	<body>
+		<form
+			id="petForm"
+			action="/post/createPost"
+			enctype="multipart/form-data"
+			method="POST"
+		>
+			<div class="mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input
+					type="text"
+					class="form-control"
+					id="name"
+					name="name"
+					value=""
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="age" class="form-label">Age</label>
+				<input type="text" class="form-control" id="age" name="age" value="" />
+			</div>
+			<div class="mb-3">
+				<label for="breed" class="form-label">Breed</label>
+				<input
+					type="text"
+					class="form-control"
+					id="breed"
+					name="breed"
+					value=""
+					readonly
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="gender" class="form-label">Gender</label>
+				<input
+					type="text"
+					class="form-control"
+					id="gender"
+					name="gender"
+					value=""
+					readonly
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="phone" class="form-label">Phone</label>
+				<input
+					type="text"
+					class="form-control"
+					id="phone"
+					name="phone"
+					value=""
+					readonly
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input
+					type="text"
+					class="form-control"
+					id="email"
+					name="email"
+					value=""
+					readonly
+				/>
+			</div>
+
+			<div class="mb-3">
+				<label for="photo" class="form-label">Photo</label>
+				<input
+					type="hidden"
+					class="form-control"
+					id="photo"
+					name="photo"
+					value=""
+					readonly
+				/>
+			</div>
+
+			<div class="mb-3">
+				<img id="dogImg" src="" alt="" />
+
+				<!-- <label for="dogImg" class="form-label">Photo</label>
+				<input
+					type="image"
+					class="form-control"
+					name="dogImg"
+					value=""
+					readonly
+				/> -->
+			</div>
+
+			<!-- <div class="mb-3">
+				<label for="imgUpload" class="form-label">Image</label>
+				<input type="file" class="form-control" id="imageUpload" name="file" />
+			</div> -->
+			<button type="submit" class="btn btn-primary" value="Upload">
+				Submit
+			</button>
+		</form>
+
 		<div class="container">
 			<div id="outcome"></div>
-
+			<button id="refresh">NEXT</button>
 			<div>
 				<section></section>
 				<section>
-					<button id="next">LIKE</button>
-					<button id="refresh">NEXT</button>
+					<!-- <button id="next">LIKE</button> -->
 				</section>
 			</div>
 		</div>
-
 		<script src="js/main.js"></script>
 	</body>
 </html>
