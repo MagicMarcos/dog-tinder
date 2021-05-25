@@ -1,6 +1,5 @@
 //
 // Variables
-////
 
 // Get the #refresh button
 var btn = document.querySelector('#refresh');
@@ -25,7 +24,6 @@ var token, tokenType, expires;
  * @return {Promise} The fetch() Promise object
  */
 
-//TODO use likes from BUB to update this number in the user database -> then pull from it on button click?
 let num = 15;
 
 function nextDog() {
@@ -69,31 +67,6 @@ function getPets() {
 }
 
 function showPets(data) {
-	// const results = document.querySelector('#outcome');
-	// results.innerHTML = '';
-
-	// const div = document.createElement('div');
-	// div.innerHTML = `<div class="row">
-	// 					<div class="col-sm-6">
-	// 					<h4>${data.animals[num].name}(${data.animals[num].age})</h4>
-
-	// 					<h6>${data.animals[num].breeds.primary} </h6>
-	// 					<h6>${data.animals[num].gender}</h6>
-
-	// 					<ul class="list-group-item">
-	// 						<li class="list-group-item">Phone: ${data.animals[num].contact.phone}</li>
-	// 						<li class="list-group-item">Email: ${data.animals[num].contact.email} </li>
-	// 					</ul>
-
-	// 					</div>
-	// 					<div class="col-sm-6 text-center">
-	// 					<img class="img-fluid rounded-circle mt-2" src= "${data.animals[num].photos[0].small}"></img>
-	// 					</div>
-
-	// 				</div>`;
-
-	// results.appendChild(div);
-
 	setValues(data);
 	num++;
 }
@@ -150,8 +123,9 @@ function getOAuth() {
 
 			// Store token data
 			token = data.access_token;
-			tokenType = data.token_type;
+			tokenType = 'Bearer';
 			expires = new Date().getTime() + data.expires_in * 1000;
+			console.log(tokenType);
 		})
 		.catch(function (err) {
 			// Log any errors
@@ -183,3 +157,5 @@ var makeCall = function () {
 
 // makeCall();
 btn.addEventListener('click', makeCall, false);
+
+fetch();
