@@ -6,7 +6,8 @@ var btn = document.querySelector('#refresh');
 
 // Client credentials
 // Replace these with your key/secret
-
+var key = ;
+var secret = ;
 // Call details
 var org = 'dog';
 var status = 'adoptable';
@@ -24,7 +25,7 @@ var token, tokenType, expires;
  * @return {Promise} The fetch() Promise object
  */
 
-let num = 15;
+let num = 0;
 
 function nextDog() {
 	getOAuth().then(function () {
@@ -151,11 +152,5 @@ var makeCall = function () {
 	getPets();
 };
 
-//
-// Inits & Event Listeners
-//
-
 // makeCall();
 btn.addEventListener('click', makeCall, false);
-
-fetch();

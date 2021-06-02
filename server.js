@@ -11,7 +11,8 @@ const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const postRoutes = require('./routes/posts');
 const petfinder = require('@petfinder/petfinder-js');
-
+const { token } = require('morgan');
+require('./dogFind/api.js');
 //Use .env file in config folder
 require('dotenv').config({ path: './config/.env' });
 
@@ -62,39 +63,3 @@ app.use('/post', postRoutes);
 app.listen(process.env.PORT, () => {
 	console.log('Server is running, you better catch it!');
 });
-
-//petfinder api
-const petKeys = process.env.PET_KEY;
-const petSecret = process.env.PET_SECRET;
-
-let client = new petfinder.Client({
-	apiKey: petKeys,
-	secret: petSecret,
-});
-client.authenticate().then(resp => {
-	const token = resp.data.access_token;
-	const expires = resp.data.expires_in;
-	const tokenType = resp.data.token_type;
-});
-
-// client.animal
-// 	.search({
-// 		type: 'Dog',
-// 		location: '01752',
-// 		page: 1,
-// 		limit: 5,
-// 	})
-
-// 	.then(function (res) {
-// 		const data = res.data.animals;
-// 		module.exports = function (req, res) {
-// 			res.writeHead(200, {
-// 				'Content-Type': 'text/json',
-// 			});
-// 			res.write(JSON.stringify(data));
-// 			res.end();
-// 		};
-// 	})
-// 	.catch(function (error) {
-// 		console.error(error);
-// 	});

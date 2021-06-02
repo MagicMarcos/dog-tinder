@@ -3,34 +3,42 @@ require('dotenv').config({ path: './config/.env' });
 
 const petfinder = require('@petfinder/petfinder-js');
 
-const client = new petfinder.Client({
-	apiKey: 'PET_F_KEY',
-	secret: 'my-api-secret',
+const petKeys = process.env.PET_KEY;
+const petSecret = process.env.PET_SECRET;
+
+let client = new petfinder.Client({
+	apiKey: petKeys,
+	secret: petSecret,
 });
 
-async function showAnimals(animalType, animalLocation) {
-	let page = 1;
-	do {
-		apiResult = await client.animal.search({
-			type: animalType,
-			location: animalLocation,
-			page,
-			limit: 100,
-		});
-		let dogIdx = (page - 1) * 100;
-		apiResult.data.animals.forEach(function (animal) {
-			console.log(
-				` -- ${++dogIdx}: ${animal.name} id: ${animal.id} url: ${animal.url}`
-			);
-		});
+let token;
+let expires;
+let tokenType;
+client.authenticate().then(resp => {
+	token = resp.data.access_token;
+	expires = resp.data.expires_in;
+	tokenType = resp.data.token_type;
+	console.log(token);
+});
 
-		page++;
-	} while (
-		apiResult.data.pagination &&
-		apiResult.data.pagination.total_pages >= page
-	);
-}
+// client.animal
+// 	.search({
+// 		type: 'Dog',
+// 		location: '01752',
+// 		page: 1,
+// 		limit: 5,
+// 	})
 
-(async function () {
-	await showAnimals('Dog', '01752');
-})();
+// 	.then(function (res) {
+// 		const data = res.data.animals;
+// 		module.exports = function (req, res) {
+// 			res.writeHead(200, {
+// 				'Content-Type': 'text/json',
+// 			});
+// 			res.write(JSON.stringify(data));
+// 			res.end();
+// 		};
+// 	})
+// 	.catch(function (error) {
+// 		console.error(error);
+// 	});
