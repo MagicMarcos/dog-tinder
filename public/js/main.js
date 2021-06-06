@@ -1,4 +1,6 @@
-//
+// import { tokenInfo } from '/server.js';
+
+// console.log(tokenInfo);
 // Variables
 
 // Get the #refresh button
@@ -6,8 +8,7 @@ var btn = document.querySelector('#refresh');
 
 // Client credentials
 // Replace these with your key/secret
-var key = ;
-var secret = ;
+
 // Call details
 var org = 'dog';
 var status = 'adoptable';
@@ -73,7 +74,12 @@ function showPets(data) {
 }
 
 function setValues(data) {
-	document.querySelector('#name').value = data.animals[num].name;
+	if (data.animals[num].name === undefined) {
+		document.querySelector('#name').value = "I don't have a name yet";
+	} else {
+		document.querySelector('#name').value = data.animals[num].name;
+	}
+
 	document.querySelector('#age').value = data.animals[num].age;
 	document.querySelector('#breed').value = data.animals[num].breeds.primary;
 	document.querySelector('#gender').value = data.animals[num].gender;
@@ -91,11 +97,13 @@ function setValues(data) {
 	}
 
 	if (data.animals[num].photos[0] == undefined) {
+		document.querySelector('h3').innerHTML =
+			"Looks like this pup's camera shy.";
 		console.log('no pic');
 	} else {
-		document.querySelector('#dogImg').src = data.animals[num].photos[0].small;
+		document.querySelector('#dogImg').src = data.animals[num].photos[0].medium;
+		document.querySelector('#photo').value = data.animals[num].photos[0].medium;
 	}
-	document.querySelector('#photo').value = data.animals[num].photos[0].small;
 }
 
 /**

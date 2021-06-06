@@ -11,14 +11,12 @@ let client = new petfinder.Client({
 	secret: petSecret,
 });
 
-let token;
-let expires;
-let tokenType;
 client.authenticate().then(resp => {
-	token = resp.data.access_token;
-	expires = resp.data.expires_in;
-	tokenType = resp.data.token_type;
-	console.log(token);
+	tokenInfo = {
+		token: resp.data.access_token,
+		expires: resp.data.expires_in,
+		tokenType: resp.data.token_type,
+	};
 });
 
 // client.animal

@@ -1,38 +1,85 @@
-<%- include('partials/header') -%>
-<div class="container">
-	<div class="row justify-content-center mt-5">
-		<div class="col-6">
-			<img src="<%= post.photo%>" alt="" />
-			<h2><%= post.name%></h2>
-			<h3 id="age"><%= post.age%></h3>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="\imgs\cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="\css\post.css" />
+		<title>BFF Finder</title>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div></div>
+			<div style="margin-left: auto; margin-right: auto" id="container">
+				<!-- !Header -->
+				<div>
+					<header>
+						<div class="siteFunctions">
+							<a class="funcBtns" href="/logout" id="logoutBtn">Logout</a>
+						</div>
 
-			<h3 id="breed"><%= post.breed%></h3>
-			<h3 id="gender"><%= post.gender%></h3>
+						<div class="mainTitle">
+							<h1 class="mainTitle">
+								<a href="/feed"
+									><img id="logo" src="\imgs\cover.png" alt="DogFind"
+								/></a>
+							</h1>
+						</div>
+						<div class="siteFunctions">
+							<a class="funcBtns" id="profileBtn" href="/profile">Profile</a>
+						</div>
+					</header>
+				</div>
 
-			<h3 id="phone"><%= post.phone%></h3>
-			<h3 id="email"><%= post.email%></h3>
-			<div class="row justify-content-between">
-				<!-- delete button -->
+				<!-- !Pet Card -->
+				<div class="cardContainer">
+					<div class="imgContainer">
+						<img class="petImg" src="<%= post.photo%>" alt="No Photo" />
+					</div>
+					<div class="petInfo">
+						<h2><%= post.name%></h2>
+						<h3 id="age"><%= post.age%></h3>
 
-				<%if(post.user == user.id){ %>
+						<h3 id="breed"><%= post.breed%></h3>
+						<h3 id="gender"><%= post.gender%></h3>
 
-				<form
-					action="/post/deletePost/<%= post.id %>?_method=DELETE"
-					method="POST"
-					class="col-3"
-				>
-					<button class="btn btn-primary fa fa-trash" type="submit"></button>
-				</form>
-				<%}%>
+						<h3 id="phone"><%= post.phone%></h3>
+						<h3 id="email"><%= post.email%></h3>
+					</div>
+				</div>
+
+				<!--! delete button -->
+				<div class="deleteBtnContainer">
+					<%if(post.user == user.id){ %>
+
+					<form
+						action="/post/deletePost/<%= post.id %>?_method=DELETE"
+						method="POST"
+						class="deleteForm"
+					>
+						<button class="deleteBtn btn btn-primary fa fa-trash" type="submit">
+							trash
+						</button>
+					</form>
+					<%}%>
+				</div>
+				<!-- !footer -->
+				<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app">
+							Marcos Cardoso
+						</a>
+						&copy; 2021</span
+					>
+				</footer>
 			</div>
+			<div></div>
 		</div>
-		<div class="col-3 mt-5">
-			<a class="btn btn-primary" href="/profile">Return to Profile</a>
-			<a class="btn btn-primary mt-5" href="/feed">Return to Feed</a>
-		</div>
-		<!-- return and profile bttns -->
-		<div class="col-6 mt-5"></div>
-	</div>
-</div>
-
-<%- include('partials/footer') -%>
+	</body>
+</html>

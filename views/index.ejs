@@ -1,11 +1,47 @@
-<%- include('partials/header') -%>
-
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
-    </div>
-</main>
-    
-
-<%- include('partials/footer') -%>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/imgs/cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="\css\index.css" />
+		<title>BFF Finder</title>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div></div>
+			<div id="container">
+				<header>
+					<div class="mainTitle">
+						<h1 class="mainTitle">
+							<a href="/feed"
+								><img id="logo" src="imgs/mainCover.png" alt="DogFind"
+							/></a>
+						</h1>
+					</div>
+				</header>
+				<main class="container">
+					<div class="row justify-content-around mt-5">
+						<a href="/login" class="funcBtns"> Login</a>
+						<a href="/signup" class="funcBtns"> Signup</a>
+					</div>
+				</main>
+				<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app"
+							>Marcos Cardoso</a
+						>
+						&copy; 2021</span
+					>
+				</footer>
+			</div>
+			<div></div>
+		</div>
+	</body>
+</html>

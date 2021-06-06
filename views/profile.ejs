@@ -1,32 +1,75 @@
-<%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/imgs/cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/profile.css" />
+		<title>BFF Finder</title>
+  </head>
+<body>
+  <div id="mainCont">
+  
+  <div style="margin-left: auto; margin-right: auto" id="container" >
+    <header>
+					<div class="siteFunctions">
+						
+					</div>
+					<div class="mainTitle">
+						<h1 class="mainTitle">
+							<a href="/feed"
+								><img id="logo" src="imgs/cover.png" alt="DogFind"
+							/></a>
+						</h1>
+					</div>
+					<div class="siteFunctions">
+						<a class="funcBtns" href="/logout" id="logoutBtn">Logout</a>
+					</div>
+				</header>
+        <div class="container">
+  
+      <div class="userInfoContainer">
+          <div class="userInfo">
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
-          
+           
       </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
+      <div class="savedPetListContainer">
+        <ul class="savedPetList">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
+          <li class="savedPetItem ">
+            <a class="savedPet" href="/post/<%= posts[i]._id%>">
+              <img class="petImg" src="<%= posts[i].photo%>" alt="No Photo">
               <h2><%= posts[i].name%></h2>
-              <img src="<%= posts[i].photo%>" alt="">
+              
             </a>
           </li>
         <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
+         
       </div>  
-    </div>
+   
   </div>
-</div>
+
+<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app">Marcos Cardoso</a>
+						&copy; 2021</span
+					>
+				</footer>
+        </div>
+       
+        </div>
+        
+</body>
+</html>
 
 
-<%- include('partials/footer') -%>
+

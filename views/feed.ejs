@@ -1,130 +1,144 @@
-<%- include('partials/header') -%>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/imgs/cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
 			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-			integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-			crossorigin="anonymous"
 		/>
-		<title>Document</title>
+		<link rel="stylesheet" href="css/feed.css" />
+		<title>BFF Finder</title>
 	</head>
 	<body>
-		<form
-			id="petForm"
-			action="/post/createPost"
-			enctype="multipart/form-data"
-			method="POST"
-		>
-			<div class="mb-3">
-				<label for="name" class="form-label">Name</label>
-				<input
-					type="text"
-					class="form-control"
-					id="name"
-					name="name"
-					value=""
-				/>
-			</div>
-			<div class="mb-3">
-				<label for="age" class="form-label">Age</label>
-				<input type="text" class="form-control" id="age" name="age" value="" />
-			</div>
-			<div class="mb-3">
-				<label for="breed" class="form-label">Breed</label>
-				<input
-					type="text"
-					class="form-control"
-					id="breed"
-					name="breed"
-					value=""
-					readonly
-				/>
-			</div>
-			<div class="mb-3">
-				<label for="gender" class="form-label">Gender</label>
-				<input
-					type="text"
-					class="form-control"
-					id="gender"
-					name="gender"
-					value=""
-					readonly
-				/>
-			</div>
-			<div class="mb-3">
-				<label for="phone" class="form-label">Phone</label>
-				<input
-					type="text"
-					class="form-control"
-					id="phone"
-					name="phone"
-					value=""
-					readonly
-				/>
-			</div>
-			<div class="mb-3">
-				<label for="email" class="form-label">Email</label>
-				<input
-					type="text"
-					class="form-control"
-					id="email"
-					name="email"
-					value=""
-					readonly
-				/>
-			</div>
+		<div id="mainCont">
+			<div id="container">
+				<header>
+					<div class="siteFunctions">
+						<a class="funcBtns" href="/logout" id="logoutBtn">Logout</a>
+					</div>
+					<div class="mainTitle">
+						<h1 class="mainTitle">
+							<a href="/feed"
+								><img id="logo" src="imgs/cover.png" alt="DogFind"
+							/></a>
+						</h1>
+					</div>
+					<div class="siteFunctions">
+						<a class="funcBtns" id="profileBtn" href="/profile">Profile</a>
+					</div>
+				</header>
+				<main>
+					<form
+						id="petForm"
+						action="/post/createPost"
+						enctype="multipart/form-data"
+						method="POST"
+					>
+						<section class="dogPhoto">
+							<h3></h3>
+							<img id="dogImg" src="" alt="" />
+							<input
+								type="hidden"
+								class="form-control"
+								id="photo"
+								name="photo"
+								value=""
+								readonly
+							/>
+						</section>
+						<section class="dogInfo">
+							<div class="mb-3">
+								<label for="name" class="form-label">Name</label>
+								<input
+									type="text"
+									class="form-control"
+									id="name"
+									name="name"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="age" class="form-label">Age</label>
+								<input
+									type="text"
+									class="form-control"
+									id="age"
+									name="age"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="breed" class="form-label">Breed</label>
+								<input
+									type="text"
+									class="form-control"
+									id="breed"
+									name="breed"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="gender" class="form-label">Gender</label>
+								<input
+									type="text"
+									class="form-control"
+									id="gender"
+									name="gender"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="phone" class="form-label">Phone</label>
+								<input
+									type="text"
+									class="form-control"
+									id="phone"
+									name="phone"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">Email</label>
+								<input
+									type="text"
+									class="form-control"
+									id="email"
+									name="email"
+									value=""
+									readonly
+								/>
+							</div>
+						</section>
+					</form>
+					<section class="actionBtns">
+						<div></div>
+						<button type="submit" class="btn" value="Upload" form="petForm">
+							LIKE
+						</button>
+						<button class="btn" id="refresh">NEXT</button>
 
-			<div class="mb-3">
-				<label for="photo" class="form-label">Photo</label>
-				<input
-					type="hidden"
-					class="form-control"
-					id="photo"
-					name="photo"
-					value=""
-					readonly
-				/>
-			</div>
-
-			<div class="mb-3">
-				<img id="dogImg" src="" alt="" />
-
-				<!-- <label for="dogImg" class="form-label">Photo</label>
-				<input
-					type="image"
-					class="form-control"
-					name="dogImg"
-					value=""
-					readonly
-				/> -->
-			</div>
-
-			<!-- <div class="mb-3">
-				<label for="imgUpload" class="form-label">Image</label>
-				<input type="file" class="form-control" id="imageUpload" name="file" />
-			</div> -->
-			<button type="submit" class="btn btn-primary" value="Upload">
-				Submit
-			</button>
-		</form>
-
-		<div class="container">
-			<div id="outcome"></div>
-			<button id="refresh">NEXT</button>
-			<div>
-				<section></section>
-				<section>
-					<!-- <button id="next">LIKE</button> -->
-				</section>
+						<div></div>
+					</section>
+				</main>
+				<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app"
+							>Marcos Cardoso</a
+						>
+						&copy; 2021</span
+					>
+				</footer>
 			</div>
 		</div>
-		<script src="js/main.js"></script>
+		<script type="module" src="js/main.js"></script>
 	</body>
 </html>
-<!-- <%- include('partials/footer') -%> -->
