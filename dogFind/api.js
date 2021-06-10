@@ -19,24 +19,37 @@ client.authenticate().then(resp => {
 	};
 });
 
-// client.animal
-// 	.search({
-// 		type: 'Dog',
-// 		location: '01752',
-// 		page: 1,
-// 		limit: 5,
-// 	})
+client.animal
+	.search({
+		type: 'Dog',
+		location: '01752',
+		page: 1,
+		limit: 3,
+	})
 
-// 	.then(function (res) {
-// 		const data = res.data.animals;
-// 		module.exports = function (req, res) {
-// 			res.writeHead(200, {
-// 				'Content-Type': 'text/json',
-// 			});
-// 			res.write(JSON.stringify(data));
-// 			res.end();
-// 		};
-// 	})
-// 	.catch(function (error) {
-// 		console.error(error);
-// 	});
+	.then(function (res) {
+		const data = res.data.animals;
+		let dataOBJ = [];
+		for (let i = 0; i < data.length; i++) {
+			dataOBJ.push({
+				name: data[i].name,
+				age: data[i].age,
+				breed: data[i].breed,
+				gender: data[i].gender,
+				phone: data[i].contact.phone,
+				email: data[i].contact.email,
+				photo: data[i].primary_photo_cropped.medium,
+			});
+		}
+		console.log(dataOBJ);
+		module.exports = function (req, res) {
+			res.writeHead(200, {
+				'Content-Type': 'text/json',
+			});
+			res.write(JSON.stringify(data));
+			res.end();
+		};
+	})
+	.catch(function (error) {
+		console.error(error);
+	});
