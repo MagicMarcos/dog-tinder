@@ -61,7 +61,8 @@ html {
 	background-color: white;
 	border-radius: 50%;
 	color: gray;
-	box-shadow: inset 0px 0px 10px 5px rgba(245, 120, 214, 0.74);
+	box-shadow: inset 0px 0px 10px 5px rgba(245, 120, 214, 0.74),
+		0px 0px 3px 1px rgb(116, 116, 116);
 	border-radius: 50%;
 	margin-top: 20px;
 }

@@ -10,6 +10,12 @@
 			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="\css\post.css" />
 		<title>BFF Finder</title>
 	</head>
@@ -21,7 +27,9 @@
 				<div>
 					<header>
 						<div class="siteFunctions">
-							<a class="funcBtns" href="/logout" id="logoutBtn">Logout</a>
+							<a class="funcBtns" href="/logout" id="logoutBtn">
+								<i class="fas fa-sign-out-alt"></i
+							></a>
 						</div>
 
 						<div class="mainTitle">
@@ -32,7 +40,9 @@
 							</h1>
 						</div>
 						<div class="siteFunctions">
-							<a class="funcBtns" id="profileBtn" href="/profile">Profile</a>
+							<a class="funcBtns" id="profileBtn" href="/profile"
+								><i class="fas fa-user"></i
+							></a>
 						</div>
 					</header>
 				</div>
@@ -56,18 +66,16 @@
 
 				<!--! delete button -->
 				<div class="deleteBtnContainer">
-					<%if(post.user == user.id){ %>
-
 					<form
 						action="/post/deletePost/<%= post.id %>?_method=DELETE"
 						method="POST"
 						class="deleteForm"
 					>
-						<button class="deleteBtn btn btn-primary fa fa-trash" type="submit">
-							trash
-						</button>
+						<button
+							class="deleteBtn btn btn-primary fa fa-trash"
+							type="submit"
+						></button>
 					</form>
-					<%}%>
 				</div>
 				<!-- !footer -->
 				<footer>

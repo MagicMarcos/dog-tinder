@@ -10,6 +10,12 @@
 			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="css/feed.css" />
 		<title>BFF Finder</title>
 	</head>
@@ -18,7 +24,9 @@
 			<div id="container">
 				<header>
 					<div class="siteFunctions">
-						<a class="funcBtns" href="/logout" id="logoutBtn">Logout</a>
+						<a class="funcBtns" href="/logout" id="logoutBtn"
+							><i class="fas fa-sign-out-alt"></i
+						></a>
 					</div>
 					<div class="mainTitle">
 						<h1 class="mainTitle">
@@ -28,7 +36,9 @@
 						</h1>
 					</div>
 					<div class="siteFunctions">
-						<a class="funcBtns" id="profileBtn" href="/profile">Profile</a>
+						<a class="funcBtns" id="profileBtn" href="/profile"
+							><i class="fas fa-user"></i
+						></a>
 					</div>
 				</header>
 				<main>
@@ -121,10 +131,13 @@
 					</form>
 					<section class="actionBtns">
 						<div></div>
-						<button type="submit" class="btn" value="Upload" form="petForm">
-							LIKE
-						</button>
-						<button class="btn" id="refresh">NEXT</button>
+						<button
+							type="submit"
+							class="btn fas fa-heart"
+							value="Upload"
+							form="petForm"
+						></button>
+						<button class="btn fas fa-times" id="refresh"></button>
 
 						<div></div>
 					</section>
@@ -139,6 +152,6 @@
 				</footer>
 			</div>
 		</div>
-		<script type="module" src="js/main.js"></script>
+		<script type="module" src="js/testing.js"></script>
 	</body>
 </html>
