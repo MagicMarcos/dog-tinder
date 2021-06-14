@@ -30,6 +30,7 @@ App is live at https://ifoundmybff.herokuapp.com
 <p>Adding accessibilty features like, high contrast and zoom in options is in the works.</p>
 <p>Upcoming feature: allowing users to determine their original location</p>
 
+---
 
 # Running the app Locally
 
