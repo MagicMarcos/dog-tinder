@@ -27,9 +27,15 @@ App is live at https://ifoundmybff.herokuapp.com
 <h1>Optimizations</h1>
 <p>As someone with not background in art, styling could definitely use improvements.</p>
 <p>Some of the code needs to refactored for better readabiility. </p>
-<p>Adding accessibilty features like, high contrast and zoom in options is in the works.</p>
-<p>Upcoming feature: allowing users to determine their original location</p>
-
+<p>Upcoming features: </p>
+    <ul> 
+        <li>Allowing users to determine their original location</li>
+        <li>Accessibilty features like, high contrast and zoom in options</li>
+        <li>Convining the dogs to let me include cats in the searches</li>
+    </ul>
+    
+    
+    
 ---
 
 # Running the app Locally
