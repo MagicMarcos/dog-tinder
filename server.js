@@ -12,7 +12,10 @@ const mainRoutes = require('./routes/main');
 const postRoutes = require('./routes/posts');
 const petfinder = require('@petfinder/petfinder-js');
 const { token } = require('morgan');
-require('./dogFind/api.js');
+
+// assign function from dogFind to getDoggos, which represents the anonymous function which was exported
+const getDoggos = require('./dogFind/api.js');
+
 //Use .env file in config folder
 require('dotenv').config({ path: './config/.env' });
 
@@ -59,7 +62,10 @@ app.use(flash());
 app.use('/', mainRoutes);
 app.use('/post', postRoutes);
 
+// Set up a route for client side information fectching
+app.get('/api/alldogs', getDoggos)
+
 //Server Running
-app.listen(process.env.PORT, () => {
+app.listen((process.env.PORT || 5000), () => {
 	console.log('Server is running, you better catch it!');
 });
