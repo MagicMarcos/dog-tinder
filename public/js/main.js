@@ -17,7 +17,6 @@ let where = '01752';
 // Token
 var token, tokenType, expires;
 
-//
 // Methods
 //
 

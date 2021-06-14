@@ -38,10 +38,10 @@ client.animal
 				gender: data[i].gender,
 				phone: data[i].contact.phone,
 				email: data[i].contact.email,
-				photo: data[i].primary_photo_cropped.medium,
+				// photo: data[i].primary_photo_cropped.small,
 			});
 		}
-		console.log(dataOBJ);
+		console.log(data);
 		module.exports = function (req, res) {
 			res.writeHead(200, {
 				'Content-Type': 'text/json',
