@@ -1,20 +1,157 @@
-<%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-            
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/imgs/cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/feed.css" />
+		<title>BFF Finder</title>
+	</head>
+	<body>
+		<div id="mainCont">
+			<div id="container">
+				<header>
+					<div class="siteFunctions">
+						<a class="funcBtns" href="/logout" id="logoutBtn"
+							><i class="fas fa-sign-out-alt"></i
+						></a>
+					</div>
+					<div class="mainTitle">
+						<h1 class="mainTitle">
+							<a href="/feed"
+								><img id="logo" src="imgs/cover.png" alt="DogFind"
+							/></a>
+						</h1>
+					</div>
+					<div class="siteFunctions">
+						<a class="funcBtns" id="profileBtn" href="/profile"
+							><i class="fas fa-user"></i
+						></a>
+					</div>
+				</header>
+				<main>
+					<form
+						id="petForm"
+						action="/post/createPost"
+						enctype="multipart/form-data"
+						method="POST"
+					>
+						<section class="dogPhoto">
+							<h3></h3>
+							<img id="dogImg" src="" alt="" />
+							<input
+								type="hidden"
+								class="form-control"
+								id="photo"
+								name="photo"
+								value=""
+								readonly
+							/>
+						</section>
+						<section class="dogInfo">
+							<div class="mb-3">
+								<label for="name" class="form-label">Name</label>
+								<input
+									type="text"
+									class="form-control"
+									id="name"
+									name="name"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="age" class="form-label">Age</label>
+								<input
+									type="text"
+									class="form-control"
+									id="age"
+									name="age"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="breed" class="form-label">Breed</label>
+								<input
+									type="text"
+									class="form-control"
+									id="breed"
+									name="breed"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="gender" class="form-label">Gender</label>
+								<input
+									type="text"
+									class="form-control"
+									id="gender"
+									name="gender"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="phone" class="form-label">Phone</label>
+								<input
+									type="text"
+									class="form-control"
+									id="phone"
+									name="phone"
+									value=""
+									readonly
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">Email</label>
+								<input
+									type="text"
+									class="form-control"
+									id="email"
+									name="email"
+									value=""
+									readonly
+								/>
+							</div>
+						</section>
+					</form>
+					<section class="actionBtns">
+						<div></div>
+						<button
+							type="submit"
+							class="btn fas fa-heart"
+							value="Upload"
+							form="petForm"
+						></button>
+						<button class="btn fas fa-times" id="refresh"></button>
 
-          </li>
-        <% } %>
-        </ul>
-
-       
-    </div>
-    
-  </div>  
-<%- include('partials/footer') -%>
+						<div></div>
+					</section>
+				</main>
+				<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app"
+							>Marcos Cardoso</a
+						>
+						&copy; 2021</span
+					>
+				</footer>
+			</div>
+		</div>
+		<script type="module" src="js/testing.js"></script>
+	</body>
+</html>

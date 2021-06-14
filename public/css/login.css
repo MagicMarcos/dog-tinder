@@ -1,0 +1,106 @@
+html {
+	height: fit-content;
+	box-shadow: inset 0 180px 180px -150px rgba(255, 0, 157, 0.438);
+	background-color: rgb(252, 242, 247);
+}
+
+#mainContainer {
+	font-family: 'Roboto', sans-serif;
+	padding-top: 140px;
+}
+
+#mainContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	margin-right: auto;
+	margin-left: auto;
+}
+#logo {
+	max-width: 600px;
+}
+
+/* !form */
+.formContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.pass {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 10px;
+}
+.inputItems {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 20px;
+}
+.email {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/* !submit btn */
+.btnContainer {
+	display: flex;
+	justify-content: center;
+}
+.btn {
+	width: 70px;
+	height: 70px;
+	border: none;
+	background-color: white;
+	border-radius: 50%;
+	color: gray;
+	box-shadow: inset 0px 0px 10px 5px rgba(245, 120, 214, 0.74),
+		0px 0px 3px 1px rgb(116, 116, 116);
+	border-radius: 50%;
+	margin-top: 20px;
+}
+.btn:focus {
+	outline: none;
+}
+.btn:hover {
+	cursor: pointer;
+	box-shadow: inset 0px 0px 10px 5px rgb(245, 120, 214);
+}
+
+.btn:active {
+	background-color: rgb(245, 120, 214);
+	color: white;
+}
+/* !footer */
+
+footer {
+	grid-area: foot;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	grid-area: foot;
+	margin-top: 50px;
+	position: fixed;
+	height: 100px;
+	bottom: 0;
+	width: 100%;
+	background: black;
+	box-shadow: 0 -30px 20px 20px black;
+}
+
+footer > span {
+	text-decoration: none;
+}
+
+#portfolio {
+	text-decoration: none;
+	color: white;
+}

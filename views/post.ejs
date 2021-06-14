@@ -1,41 +1,93 @@
-<%- include('partials/header') -%>
-<div class="container">
-	<div class="row justify-content-center mt-5">
-		<div class="col-6">
-			<h2><%= post.title %></h2>
-			<img class="img-fluid" src="<%= post.image%>" />
-			<div class="row justify-content-between">
-				<!-- <form
-					class="col-1"
-					action="/post/likePost/<%= post.id %>?_method=PUT"
-					method="POST"
-				>
-					<button class="btn btn-primary fa fa-heart" type="submit"></button>
-				</form>
-				<h3 class="col-3">Likes: <%= post.likes %></h3>
-				<%if(post.user == user.id){ %> -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="\imgs\cover.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="\css\post.css" />
+		<title>BFF Finder</title>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div></div>
+			<div style="margin-left: auto; margin-right: auto" id="container">
+				<!-- !Header -->
+				<div>
+					<header>
+						<div class="siteFunctions">
+							<a class="funcBtns" href="/logout" id="logoutBtn">
+								<i class="fas fa-sign-out-alt"></i
+							></a>
+						</div>
 
-				<!-- delete button -->
-				<form
-					action="/post/deletePost/<%= post.id %>?_method=DELETE"
-					method="POST"
-					class="col-3"
-				>
-					<button class="btn btn-primary fa fa-trash" type="submit"></button>
-				</form>
-				<%}%>
+						<div class="mainTitle">
+							<h1 class="mainTitle">
+								<a href="/feed"
+									><img id="logo" src="\imgs\cover.png" alt="DogFind"
+								/></a>
+							</h1>
+						</div>
+						<div class="siteFunctions">
+							<a class="funcBtns" id="profileBtn" href="/profile"
+								><i class="fas fa-user"></i
+							></a>
+						</div>
+					</header>
+				</div>
+
+				<!-- !Pet Card -->
+				<div class="cardContainer">
+					<div class="imgContainer">
+						<img class="petImg" src="<%= post.photo%>" alt="No Photo" />
+					</div>
+					<div class="petInfo">
+						<h2><%= post.name%></h2>
+						<h3 id="age"><%= post.age%></h3>
+
+						<h3 id="breed"><%= post.breed%></h3>
+						<h3 id="gender"><%= post.gender%></h3>
+
+						<h3 id="phone"><%= post.phone%></h3>
+						<h3 id="email"><%= post.email%></h3>
+					</div>
+				</div>
+
+				<!--! delete button -->
+				<div class="deleteBtnContainer">
+					<form
+						action="/post/deletePost/<%= post.id %>?_method=DELETE"
+						method="POST"
+						class="deleteForm"
+					>
+						<button
+							class="deleteBtn btn btn-primary fa fa-trash"
+							type="submit"
+						></button>
+					</form>
+				</div>
+				<!-- !footer -->
+				<footer>
+					<span>
+						<a id="portfolio" href="https://marcoscardoso.netlify.app">
+							Marcos Cardoso
+						</a>
+						&copy; 2021</span
+					>
+				</footer>
 			</div>
+			<div></div>
 		</div>
-		<div class="col-3 mt-5">
-			<p><%= post.caption %></p>
-		</div>
-
-		<!-- return and profile bttns -->
-		<div class="col-6 mt-5">
-			<a class="btn btn-primary" href="/profile">Return to Profile</a>
-			<a class="btn btn-primary" href="/feed">Return to Feed</a>
-		</div>
-	</div>
-</div>
-
-<%- include('partials/footer') -%>
+	</body>
+</html>
