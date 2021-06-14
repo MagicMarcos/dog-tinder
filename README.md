@@ -29,10 +29,10 @@ App is live at https://ifoundmybff.herokuapp.com
 <p>Some of the code needs to refactored for better readabiility. </p>
 <p>Adding accessibilty features like, high contrast and zoom in options is in the works.</p>
 <p>Upcoming feature: allowing users to determine their original location</p>
-<hr>
+---
 
 # Running the app Locally
-
+---
 <h1> Install </h1>
 
 `npm install`
