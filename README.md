@@ -29,15 +29,15 @@ App is live at https://ifoundmybff.herokuapp.com
 <p>Some of the code needs to refactored for better readabiility. </p>
 <p>Adding accessibilty features like, high contrast and zoom in options is in the works.</p>
 <p>Upcoming feature: allowing users to determine their original location</p>
----
+
 
 # Running the app Locally
----
+
 <h1> Install </h1>
 
 `npm install`
 
----
+
 <h1> Things to add </h1>
 
 - Create a `.env` file and add the following as `key = value`
@@ -47,7 +47,6 @@ App is live at https://ifoundmybff.herokuapp.com
   - PET_KEY = `your petfinder api key`
   - PET_SECRET = `your petfinder api secret`
 
----
 
 <h1> Run </h1>
 
