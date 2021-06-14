@@ -33,12 +33,12 @@ App is live at https://ifoundmybff.herokuapp.com
 
 # Running the app Locally
 
-<h1> Install </h1>
+<h2> Install </h2>
 
 `npm install`
 
 
-<h1> Things to add </h1>
+<h2> Things to add </h2>
 
 - Create a `.env` file and add the following as `key = value`
   - PORT = 2121 (can be any port example: 3000)
@@ -48,6 +48,6 @@ App is live at https://ifoundmybff.herokuapp.com
   - PET_SECRET = `your petfinder api secret`
 
 
-<h1> Run </h1>
+<h2> Run </h2>
 
 `npm start`
