@@ -50,6 +50,31 @@ button {
 	color: white;
 }
 
+.btn {
+	width: 90px;
+	height: 90px;
+	border: 3px solid green;
+	background-color: black;
+	border-radius: 50%;
+	color: green;
+	margin-top: 2%;
+	font-size: 30px;
+}
+.btn:focus {
+	outline: none;
+}
+.btn:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 8px green, inset 0px 0px 8px green;
+}
+
+.btn:active {
+	/* width: 88px;
+	height: 88px; */
+	background-color: green;
+	color: white;
+	box-shadow: none;
+}
 /* !footer */
 
 footer {

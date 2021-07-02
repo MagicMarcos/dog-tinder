@@ -1,6 +1,7 @@
 html {
-	box-shadow: inset 0 -290px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0),
-		inset 0 200px 500px -150px rgba(255, 0, 157, 0.438);
+	/* box-shadow: inset 0 -290px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0),
+		inset 0 200px 500px -150px rgba(255, 0, 157, 0.438); */
+	box-shadow: inset 0 -290px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0);
 	/* background-color: rgba(233, 25, 153, 0.233); */
 	bottom: 0;
 }
@@ -18,14 +19,11 @@ html {
 		'main'
 		'buttons'
 		'foot';
-	/* border: 2px solid red; */
 	justify-self: center;
 	font-family: 'Roboto', sans-serif;
 }
 
 main {
-	border-radius: 10px;
-
 	height: 600px;
 }
 
@@ -33,9 +31,11 @@ main {
 header {
 	display: grid;
 	grid-area: head;
-	/* border: 1px solid black; */
 	grid-template-columns: 1fr 2fr 1fr;
 	align-items: center;
+	padding-top: 20px;
+	margin-bottom: 10px;
+	border-radius: 5px;
 }
 
 .mainTitle {
@@ -54,7 +54,7 @@ h1 {
 	box-shadow: 0px 0px 3px 2px gray;
 }
 #logo:hover {
-	box-shadow: 0px 0px 3px 2px rgb(245, 120, 214);
+	box-shadow: 0px 0px 3px 2px black;
 }
 
 .siteFunctions {
@@ -68,37 +68,44 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	color: gray;
-	box-shadow: inset 0px 0px 35px 5px White, 0px 0px 3px 1px rgb(116, 116, 116);
+	border: 3px solid green;
 	border-radius: 50%;
+	color: green;
 	margin-bottom: 10%;
 	width: 70px;
 	height: 70px;
 	font-size: 25px;
 }
 
+#logoutBtn {
+	border: 3px solid red;
+	color: red;
+}
+
 .funcBtns:hover {
-	box-shadow: inset 0px 0px 10px 5px rgb(245, 120, 214);
-	color: white;
+	box-shadow: 0px 0px 3px green, inset 0px 0px 3px green;
+}
+
+#logoutBtn:hover {
+	border: 3px solid red;
+	box-shadow: 0px 0px 3px red, inset 0px 0px 3px red;
+	color: red;
 }
 
 .funcBtns:active {
-	background-color: rgb(245, 120, 214);
-}
-/* #profileBtn {
-	margin-left: 15%;
+	color: WHITE;
+	background-color: green;
 }
 
-#logoutBtn {
-	margin-right: 1%;
-} */
+#logoutBtn:active {
+	color: WHITE;
+	background-color: red;
+}
 
 /*! main form */
 form {
 	display: grid;
 	grid-area: main;
-	/* border: 1px solid green; */
-
 	grid-template-columns: 1fr 1fr;
 	height: 450px;
 }
@@ -110,7 +117,8 @@ form {
 	align-items: center;
 	justify-content: center;
 	border-radius: 5px;
-	box-shadow: inset 0px 0px 100px 5px rgba(238, 136, 199, 0.377);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4),
+		inset 0px 0px 100px 5px rgba(85, 85, 85, 0.199);
 }
 
 #dogImg {
@@ -120,7 +128,6 @@ form {
 
 /*! dog description */
 .dogInfo {
-	/* border: 1px solid orange; */
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -130,16 +137,14 @@ form {
 
 .dogInfo > div {
 	width: 100%;
-	/* border: 1px solid salmon; */
-	padding: 1%;
-	background-color: rgb(243, 229, 229);
+	padding: 1.3%;
 	margin: 0.5%;
 	border-radius: 5px;
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .mb-3 > input {
-	width: 100%;
-	background-color: rgb(243, 229, 229);
+	width: 98%;
 	font-size: 1.5rem;
 	border-style: hidden;
 }
@@ -178,8 +183,6 @@ form {
 }
 
 .btn:active {
-	/* width: 88px;
-	height: 88px; */
 	background-color: green;
 	color: white;
 	box-shadow: none;
@@ -219,4 +222,87 @@ footer > span {
 #portfolio {
 	text-decoration: none;
 	color: white;
+}
+
+@media screen and (max-width: 900px) {
+	#doggender,
+	#dogphone,
+	#dogemail {
+		display: none;
+	}
+	html {
+		/* box-shadow: inset 0 -290px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0),
+		inset 0 200px 500px -150px rgba(255, 0, 157, 0.438); */
+		box-shadow: inset 0 -250px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0);
+		/* background-color: rgba(233, 25, 153, 0.233); */
+		bottom: 0;
+	}
+	/* ! main */
+	main {
+		height: 800px;
+	}
+
+	/*! main form */
+	#petForm {
+		display: grid;
+		grid-template-areas:
+			'img'
+			'description';
+		grid-area: main;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		align-items: center;
+		height: fit-content;
+		justify-self: center;
+	}
+
+	/*! dog image */
+	.dogPhoto {
+		grid-area: img;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		border-radius: 5px;
+		box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4),
+			inset 0px 0px 100px 5px rgba(85, 85, 85, 0.199);
+		height: 450px;
+	}
+
+	#dogImg {
+		max-height: 449px;
+		border-radius: 10px;
+	}
+	/*! dog description */
+	.dogInfo {
+		grid-area: description;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 1% 1.5% 1% 1.5%;
+	}
+
+	.dogInfo > div {
+		width: 100%;
+		padding: 1.3%;
+		margin: 0.5%;
+		border-radius: 5px;
+		box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
+	}
+
+	.mb-3 > input {
+		width: 98%;
+		font-size: 1.5rem;
+		border-style: hidden;
+	}
+
+	.mb-3 > input:focus {
+		outline: none;
+	}
+	.btn {
+		margin-top: 0px;
+	}
+	header {
+		padding: 0;
+	}
 }

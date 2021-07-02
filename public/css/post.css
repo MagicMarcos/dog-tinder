@@ -1,7 +1,5 @@
 html {
-	box-shadow: inset 0 -270px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0),
-		inset 0 200px 500px -150px rgba(255, 0, 157, 0.438);
-	background-color: rgba(233, 25, 153, 0.233);
+	box-shadow: inset 0 -270px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0);
 	bottom: 0;
 	font-family: 'Roboto', sans-serif;
 }
@@ -42,7 +40,7 @@ h1 {
 }
 
 #logo:hover {
-	box-shadow: 0px 0px 3px 2px rgb(245, 120, 214);
+	box-shadow: 0px 0px 3px 2px black;
 }
 
 .siteFunctions {
@@ -55,24 +53,37 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	color: gray;
-	box-shadow: inset 0px 0px 35px 5px White, 0px 0px 3px 1px rgb(116, 116, 116);
+	color: green;
+	/* box-shadow: inset 0px 0px 35px 5px White, 0px 0px 3px 1px rgb(116, 116, 116); */
+	border: 3px solid green;
 	border-radius: 50%;
 	margin-bottom: 10%;
 	width: 70px;
 	height: 70px;
 	font-size: 25px;
 }
+#logoutBtn {
+	color: red;
+	border: 3px solid red;
+}
 
 .funcBtns:hover {
-	box-shadow: inset 0px 0px 10px 5px rgb(245, 120, 214);
-	color: white;
+	box-shadow: 0px 0px 3px green, inset 0px 0px 3px green;
+}
+
+#logoutBtn:hover {
+	box-shadow: 0px 0px 3px red, inset 0px 0px 3px red;
 }
 
 .funcBtns:active {
-	background-color: rgb(245, 120, 214);
+	background-color: green;
+	color: white;
 }
+#logoutBtn:active {
+	background-color: red;
 
+	color: white;
+}
 .userInfoContainer {
 	grid-area: main;
 }
@@ -86,7 +97,8 @@ h1 {
 	justify-content: center;
 	height: 450px;
 	border-radius: 10px;
-	box-shadow: inset 0px 0px 80px 5px rgba(238, 136, 199, 0.377);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4),
+		inset 0px 0px 100px 5px rgba(85, 85, 85, 0.199);
 	margin-top: 30px;
 }
 .imgContainer {

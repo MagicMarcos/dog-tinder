@@ -1,9 +1,13 @@
 html {
-	box-shadow: inset 0 -250px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0),
-		inset 0 200px 500px -150px rgba(255, 0, 157, 0.438);
+	box-shadow: inset 0 -250px 20px -20px black, 0 10px 0 1000px rgb(0, 0, 0);
 	/* background-color: rgba(233, 25, 153, 0.233); */
 	bottom: 0;
 	font-family: 'Roboto', sans-serif;
+}
+
+#mainCont {
+	height: 98vh;
+	margin: 0;
 }
 
 #container {
@@ -45,7 +49,7 @@ h1 {
 }
 
 #logo:hover {
-	box-shadow: 0px 0px 3px 2px rgb(245, 120, 214);
+	box-shadow: 0px 0px 3px 2px black;
 }
 
 .siteFunctions {
@@ -58,8 +62,8 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	color: gray;
-	box-shadow: inset 0px 0px 35px 5px White, 0px 0px 3px 1px rgb(116, 116, 116);
+	border: 3px solid red;
+	color: red;
 	border-radius: 50%;
 	margin-bottom: 10%;
 	width: 70px;
@@ -68,22 +72,28 @@ h1 {
 }
 
 .funcBtns:hover {
-	box-shadow: inset 0px 0px 10px 5px rgb(245, 120, 214);
-	color: white;
+	box-shadow: 0px 0px 3px red, inset 0px 0px 3px red;
 }
 
 .funcBtns:active {
-	background-color: rgb(245, 120, 214);
+	background-color: red;
+	color: white;
 }
 
 .userInfoContainer {
 	grid-area: main;
 }
 
+#welcome {
+	font-size: 20px;
+}
+
 /*! petList  */
 .savedPetListContainer {
 	margin-top: 50px;
 	grid-area: buttons;
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
+	padding-top: 1%;
 }
 
 .savedPetList {
@@ -109,7 +119,7 @@ h1 {
 }
 
 .savedPetItem:hover {
-	box-shadow: 0px 0px 5px 5px rgb(241, 137, 236);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .savedPet {
@@ -138,6 +148,12 @@ footer {
 	color: white;
 	grid-area: foot;
 	height: 250px;
+	position: absolute;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }
 
 footer > span {
