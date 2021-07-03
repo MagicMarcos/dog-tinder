@@ -25,7 +25,8 @@ App is live at https://ifoundmybff.herokuapp.com
 <p>Using the SDK of a well documented API was a refreshing experience and being able to do all the authentication in the backend was amazing.</p>
 
 <h1>Optimizations</h1>
-<p>As someone with not background in art, styling could definitely use improvements.</p>
+<p>As someone with no background in art, styling could definitely use improvements.</p>
+<p>Optimize CSS</p>
 <p>Some of the code needs to refactored for better readabiility. </p>
 <p>Upcoming features: </p>
     <ul> 
