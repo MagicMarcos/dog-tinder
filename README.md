@@ -2,8 +2,8 @@
 <p> A tinder inspired web application, for matching prospective adoption seekers in the Boston region, with their future best friends! </p>
 App is live at https://ifoundmybff.herokuapp.com
 
-<h1>How It's Made:</h1>
-<p>Utilized: </p> 
+## How It's Made:
+### Utilized: 
     <ul> 
         <li>JavaScript</li>
         <li>Node</li>
@@ -14,20 +14,23 @@ App is live at https://ifoundmybff.herokuapp.com
         <li>Passport (auth)</li>
         <li>Petfinder API SDK</li>
     </ul>
-<p>The current product utilizes M-V-C based architecture.</p>
+<p>The current product utilizes M-V-C based design pattern.</p>
+
+## Reflections and Description
 <p>Users are able to sign up for an account and search through a list of adoptable pets in the Boston region. At this time an actual matching feature would be hard to implement without cooperation from individual shelters. Thus users are able to save the details of the dogs they "swipe right" on.<p/>
 
 
-<h1>Lessons Learned:</h1>
+### Lessons Learned:
 <p>Through building this app, I was able to get comfortable with the basics of GET, PUT, POST and DELETE. As well as further familiarizing myself in using EJS.</p>
 <p>Additionally, I was better able to vizualize and familiarize myself with how these requests are made, through the use of MVC. </p>
 <p>I found that organizing files, introduced some fun new challenges in keeping track of the apps functionalities.</p>
 <p>Using the SDK of a well documented API was a refreshing experience and being able to do all the authentication in the backend was amazing.</p>
 
-<h1>Optimizations</h1>
+### Optimizations
 <p>As someone with no background in art, styling could definitely use improvements.</p>
 <p>Optimize CSS</p>
 <p>Some of the code needs to refactored for better readabiility. </p>
+<p>Fix some design breaking aspects. </p>
 <p>Upcoming features: </p>
     <ul> 
         <li>Allowing users to determine their original location</li>
@@ -35,11 +38,13 @@ App is live at https://ifoundmybff.herokuapp.com
         <li>Convining the dogs to let me include cats in the searches</li>
     </ul>
     
-    
+### Previews 
+![home page](https://res.cloudinary.com/codechella/image/upload/v1639342395/bff-finder_e7kqrc.png)
+![pet pages](https://res.cloudinary.com/codechella/image/upload/v1639342486/dog-page_rv6spc.png)
     
 ---
 
-# Running the app Locally
+## Running the app Locally
 
 <h2> Install </h2>
 
