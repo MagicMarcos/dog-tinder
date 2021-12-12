@@ -16,7 +16,7 @@ App is live at https://ifoundmybff.herokuapp.com
     </ul>
 <p>The current product utilizes M-V-C based design pattern.</p>
 
-## Reflections and Description
+### Reflections and Description
 <p>Users are able to sign up for an account and search through a list of adoptable pets in the Boston region. At this time an actual matching feature would be hard to implement without cooperation from individual shelters. Thus users are able to save the details of the dogs they "swipe right" on.<p/>
 
 
@@ -37,6 +37,9 @@ App is live at https://ifoundmybff.herokuapp.com
         <li>Accessibilty features like, high contrast and zoom in options</li>
         <li>Convining the dogs to let me include cats in the searches</li>
     </ul>
+    
+### Errors and Bugs 
+<p>If something behaves unexpectedly, it is likely a bug. Create an issue and report it <a href="https://github.com/MagicMarcos/dog-tinder/issues">here</a>  </p>
     
 ### Previews 
 ![home page](https://res.cloudinary.com/codechella/image/upload/v1639342395/bff-finder_e7kqrc.png)
